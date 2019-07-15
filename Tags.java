@@ -91,8 +91,10 @@ public class Tags  {
 
     // SETTERS
     public static void setTagdono(Player p) {
+
+
         if (p.hasPermission("tag.tag.dono")) {
-            getTagdono().addPlayer(p);
+            getTagdono().addEntry(p.getName());
            tg.getConfig().set(p.getName(), "dono");
             tg.saveConfig();
             p.setScoreboard(board);
@@ -107,7 +109,7 @@ public class Tags  {
 
     public  static void setTagsubdono(Player p) {
         if (p.hasPermission("tag.tag.subdono")) {
-            getTagdono().addPlayer(p);
+            getTagsubdono().addEntry(p.getName());
           tg.getConfig().set(p.getName(), "sd");
             tg.saveConfig();
             p.setScoreboard(board);
@@ -125,7 +127,7 @@ public class Tags  {
            tg.getConfig().set(p.getName(), "adm");
             tg.saveConfig();
             p.setScoreboard(board);
-            getTagadmin().addPlayer(p);
+            getTagadmin().addEntry(p.getName());
             p.setDisplayName(ChatColor.RED + "" + ChatColor.BOLD + "" + ChatColor.MAGIC + "a" + ChatColor.RED + "Admin" + ChatColor.MAGIC + "a" + ChatColor.RED + " " + p.getName());
             getTagadmin().setPrefix(ChatColor.RED + "" + ChatColor.BOLD + "ADM ");
             getTagadmin().setSuffix(ChatColor.RED + "" + ChatColor.ITALIC + " Admin");
@@ -138,7 +140,7 @@ public class Tags  {
           tg.getConfig().set(p.getName(), "lider");
             tg.saveConfig();
             p.setScoreboard(board);
-            getTaglider().addPlayer(p);
+            getTaglider().addEntry(p.getName());
             p.setDisplayName(ChatColor.RED + "" + ChatColor.BOLD + "" + ChatColor.MAGIC + "a" + ChatColor.RED + "Lider" + ChatColor.MAGIC + "a" + ChatColor.RED + " " + p.getName());
             getTaglider().setPrefix(ChatColor.RED + "" + ChatColor.BOLD + "ADM ");
             getTaglider().setSuffix(ChatColor.RED + "" + ChatColor.ITALIC + " Lider");
@@ -150,7 +152,7 @@ public class Tags  {
         if (p.hasPermission("tag.tag.mod")) {
          tg.getConfig().set(p.getName(), "mod");
             tg.saveConfig();
-            getTagmod().addPlayer(p);
+            getTagmod().addEntry(p.getName());
             p.setScoreboard(board);
             p.setDisplayName(ChatColor.DARK_GREEN + "" + ChatColor.BOLD + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_GREEN + "Mod" + ChatColor.MAGIC + "a" + ChatColor.DARK_GREEN + " " + p.getName());
             getTagmod().setPrefix(ChatColor.DARK_GREEN + "" + ChatColor.BOLD + "MOD ");
@@ -165,7 +167,7 @@ public class Tags  {
             tg.saveConfig();
             p.setScoreboard(board);
             p.setDisplayName(ChatColor.GREEN + "" + ChatColor.BOLD + "" + ChatColor.MAGIC + "a" + ChatColor.GREEN + "Ajudante" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " " + p.getName());
-            getTagajudante().addPlayer(p);
+            getTagajudante().addEntry(p.getName());
             getTagajudante().setPrefix(ChatColor.GREEN + "" + ChatColor.BOLD + "MOD ");
             getTagajudante().setSuffix(ChatColor.GREEN + "" + ChatColor.BOLD + " Ajudante");
             p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.GREEN + ChatColor.MAGIC + "a" + ChatColor.GREEN + "AJUDANTE" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
@@ -178,7 +180,7 @@ public class Tags  {
             tg.saveConfig();
             p.setScoreboard(board);
             p.setDisplayName(ChatColor.BLUE + "" + ChatColor.BOLD + "" + ChatColor.MAGIC + "a" + ChatColor.BLUE + "Vip" + ChatColor.MAGIC + "a" + ChatColor.BLUE + " " + p.getName());
-            getTagvipvit().addPlayer(p);
+            getTagvipvit().addEntry(p.getName());
             getTagvipvit().setPrefix(ChatColor.BLUE + "" + ChatColor.BOLD + "VIP ");
             getTagvipvit().setSuffix(ChatColor.BLUE + "" + ChatColor.ITALIC + " Eterno");
             p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.BLUE + ChatColor.MAGIC + "a" + ChatColor.BLUE + "VipVit" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
@@ -191,7 +193,7 @@ public class Tags  {
             tg.saveConfig();
             p.setScoreboard(board);
             p.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + "" + ChatColor.MAGIC + "a" + ChatColor.YELLOW + "Vip" + ChatColor.MAGIC + "a" + ChatColor.YELLOW + " " + p.getName());
-            getTagvip().addPlayer(p);
+            getTagvip().addEntry(p.getName());
             getTagvip().setPrefix(ChatColor.YELLOW + "" + ChatColor.BOLD + "VIP ");
             p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.YELLOW + ChatColor.MAGIC + "a" + ChatColor.YELLOW + "VIP" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
         }
@@ -202,7 +204,7 @@ public class Tags  {
            tg.getConfig().set(p.getName(), "yt");
             tg.saveConfig();
             p.setDisplayName(ChatColor.BLACK + "" + ChatColor.BOLD + "" + ChatColor.MAGIC + "a" + ChatColor.BLACK + "You" + ChatColor.GOLD + "Tube" + ChatColor.MAGIC + "a" + ChatColor.RED + " " + p.getName());
-            getTagyt().addPlayer(p);
+            getTagyt().addEntry(p.getName());
             getTagyt().setPrefix(ChatColor.BLACK + "" + ChatColor.MAGIC + "a" + ChatColor.BOLD + "" + ChatColor.BLACK + "You " + ChatColor.RED);
             getTagyt().setSuffix(ChatColor.GOLD + " Tube" + ChatColor.MAGIC + "a");
             p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.BLACK + "" + ChatColor.MAGIC + "a" + ChatColor.BOLD + "" + ChatColor.BLACK + "You" + ChatColor.GOLD + "Tube" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
@@ -211,7 +213,7 @@ public class Tags  {
 
     public  static void setTagpadrao(Player p) {
         if (p.hasPermission("tag.tag.off")) {
-            getTagpadrao().addPlayer(p);
+            getTagpadrao().addEntry(p.getName());
            tg.getConfig().set(p.getName(), "padrao");
             tg.saveConfig();
             p.setDisplayName(ChatColor.GRAY + p.getName());
@@ -225,7 +227,7 @@ public class Tags  {
             p.setScoreboard(board);
            tg.getConfig().set(p.getName(), "test");
             tg.saveConfig();
-            getTagtestador().addPlayer(p);
+            getTagtestador().addEntry(p.getName());
             p.setDisplayName(ChatColor.DARK_AQUA + "" + ChatColor.BOLD + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_AQUA + "Testador" + ChatColor.MAGIC + "a" + ChatColor.DARK_AQUA + " " + p.getName());
             getTagtestador().setPrefix(ChatColor.DARK_AQUA + "Testador ");
             p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta com a tag " + ChatColor.DARK_AQUA + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_AQUA + "Testador" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
@@ -237,7 +239,7 @@ public class Tags  {
            tg.getConfig().set(p.getName(), "staff");
             tg.saveConfig();
             p.setScoreboard(board);
-            getTagstaff().addPlayer(p);
+            getTagstaff().addEntry(p.getName());
             p.setDisplayName(ChatColor.GOLD + "" + ChatColor.BOLD + "" + ChatColor.MAGIC + "a" + ChatColor.GOLD + "Staff" + ChatColor.MAGIC + "a" + ChatColor.GOLD + " " + p.getName());
             getTagstaff().setPrefix(ChatColor.GOLD + "Staff ");
             p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.GOLD + "" + ChatColor.MAGIC + "a" + ChatColor.GOLD + "Staff" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
